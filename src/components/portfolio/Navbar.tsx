@@ -86,9 +86,10 @@ export default function Navbar({ isDark, toggleTheme }: NavbarProps) {
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.2, ease: "easeOut" }}
             className="md:hidden bg-background/95 backdrop-blur-xl border-b border-border"
           >
             <div className="flex flex-col p-4 gap-1">
@@ -96,8 +97,8 @@ export default function Navbar({ isDark, toggleTheme }: NavbarProps) {
                 <button
                   key={l.id}
                   onClick={() => scrollTo(l.id)}
-                  className={`px-4 py-3 rounded-lg text-left text-sm font-medium transition-colors ${
-                    activeId === l.id ? "text-primary bg-primary/10" : "text-muted-foreground"
+                  className={`w-full px-4 py-3 rounded-lg text-left text-sm font-medium transition-colors cursor-pointer ${
+                    activeId === l.id ? "text-primary bg-primary/10" : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
                   }`}
                 >
                   {l.label}
