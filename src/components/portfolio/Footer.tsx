@@ -20,7 +20,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="text-center md:text-left">
             <span className="font-heading font-bold text-lg gradient-text">M.G.T.D. Gamage</span>
-            <p className="text-muted-foreground text-xs mt-1">© 2025 All rights reserved.</p>
+            <p className="text-muted-foreground text-xs mt-1">© 2026 All rights reserved.</p>
           </div>
 
           <div className="flex gap-4">
