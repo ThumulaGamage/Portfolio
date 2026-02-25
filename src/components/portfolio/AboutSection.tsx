@@ -9,7 +9,7 @@ const highlights = [
   { icon: Telescope, text: "Currently Learning: ML, Deep Learning, Generative AI" },
   { icon: Lightbulb, text: "Passion: Building Real-World Solutions" },
   { icon: Users, text: "Experience: Team Leadership & Solo Projects" },
-  { icon: Mail, text: "22eng092@sjp.ac.lk" },
+  { icon: Mail, text: "thumuladgamage@gmail.com" },
 ];
 
 export default function AboutSection() {
@@ -50,9 +50,7 @@ export default function AboutSection() {
                 <p className="font-medium">B.Sc. in Computer Engineering</p>
                 <p className="text-muted-foreground text-sm">University of Sri Jayewardenepura, Faculty of Engineering</p>
                 <div className="flex flex-wrap gap-3 mt-2 text-xs text-muted-foreground">
-                  <span>Reg: EN108900</span>
-                  <span>Index: 22/ENG/092</span>
-                  <span className="text-accent font-medium">Currently Pursuing</span>
+                  
                 </div>
               </div>
             </AnimatedSection>

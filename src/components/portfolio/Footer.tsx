@@ -1,9 +1,9 @@
 import { Github, Linkedin, Mail, ArrowUp } from "lucide-react";
 
 const socials = [
-  { icon: Github, href: "https://github.com/", label: "GitHub" },
-  { icon: Linkedin, href: "https://linkedin.com/", label: "LinkedIn" },
-  { icon: Mail, href: "mailto:22eng092@sjp.ac.lk", label: "Email" },
+  { icon: Github, href: "https://github.com/ThumulaGamage", label: "GitHub" },
+  { icon: Linkedin, href: "https://linkedin.com/in/thumula-gamage-31a9112bb", label: "LinkedIn" },
+  { icon: Mail, href: "mailto:thumuladgamage@gmail.com", label: "Email" },
 ];
 
 const links = [

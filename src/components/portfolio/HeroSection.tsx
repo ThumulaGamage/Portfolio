@@ -13,9 +13,9 @@ const statsData = [
 ];
 
 const socials = [
-  { icon: Github, href: "https://github.com/", label: "GitHub" },
-  { icon: Linkedin, href: "https://linkedin.com/", label: "LinkedIn" },
-  { icon: Mail, href: "mailto:22eng092@sjp.ac.lk", label: "Email" },
+  { icon: Github, href: "https://github.com/ThumulaGamage", label: "GitHub" },
+  { icon: Linkedin, href: "https://linkedin.com/in/thumula-gamage-31a9112bb", label: "LinkedIn" },
+  { icon: Mail, href: "mailto:thumuladgamage@gmail.com", label: "Email" },
 ];
 
 function StatCard({ value, suffix, label }: { value: number; suffix: string; label: string }) {
@@ -121,12 +121,7 @@ export default function HeroSection() {
               >
                 View My Work
               </button>
-              <a
-                href="#"
-                className="btn-glow-outline px-6 py-3 rounded-lg border border-primary-foreground/30 text-primary-foreground font-medium flex items-center gap-2 transition-all"
-              >
-                <Download size={16} /> Download CV
-              </a>
+           
               <button
                 onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
                 className="btn-glow-outline px-6 py-3 rounded-lg border border-primary-foreground/30 text-primary-foreground font-medium transition-all"

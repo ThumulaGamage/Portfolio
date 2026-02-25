@@ -70,6 +70,8 @@ export const projects: Project[] = [
       "ESP32-based sensor system",
       "BLE wireless communication",
       "Real-time mobile app sync",
+      "Customizable hydration goals",
+      "Support both healthy and people with deseases like kidney failure",
       "Hydration tracking and reminders",
     ],
     contributions: [

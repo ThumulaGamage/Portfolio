@@ -1,12 +1,13 @@
 import { useState } from "react";
-import { Mail, MapPin, Briefcase, Send } from "lucide-react";
+import { Mail, MapPin, Briefcase, Send, Phone } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import SectionHeading from "./SectionHeading";
 import AnimatedSection from "./AnimatedSection";
 
 const contactInfo = [
-  { icon: Mail, label: "Email", value: "22eng092@sjp.ac.lk", href: "mailto:22eng092@sjp.ac.lk" },
-  { icon: MapPin, label: "Location", value: "Sri Lanka" },
+  { icon: Mail, label: "Email", value: "thumuladgamage@gmail.com", href: "mailto:thumuladgamage@gmail.com" },
+  { icon: Phone, label: "Phone", value: "+94714149937", href: "tel:+94714149937" },
+  { icon: MapPin, label: "Location", value: "Kuliyapitiya, Sri Lanka" },
   { icon: Briefcase, label: "Status", value: "Open to Internship Opportunities" },
 ];
 
