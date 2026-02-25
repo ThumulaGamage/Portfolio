@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 20% 98%;
+    --foreground: 213 27% 16%;
+    --card: 0 0% 100%;
+    --card-foreground: 213 27% 16%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 213 27% 16%;
+    --primary: 216 63% 33%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 29% 24%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 214 32% 91%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 207 71% 53%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 216 63% 33%;
+    --radius: 0.75rem;
+    --hero-gradient-1: 216 63% 33%;
+    --hero-gradient-2: 210 29% 24%;
+    --hero-gradient-3: 207 71% 53%;
+    --glass-bg: 0 0% 100% / 0.08;
+    --glass-border: 0 0% 100% / 0.15;
+    --glass-shadow: 0 0% 0% / 0.1;
+    --section-alt: 214 32% 96%;
+  }
+
+  .dark {
+    --background: 222 30% 8%;
+    --foreground: 210 40% 96%;
+    --card: 222 25% 12%;
+    --card-foreground: 210 40% 96%;
+    --popover: 222 25% 12%;
+    --popover-foreground: 210 40% 96%;
+    --primary: 207 71% 53%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 216 63% 33%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 222 20% 18%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 207 71% 53%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 222 20% 20%;
+    --input: 222 20% 20%;
+    --ring: 207 71% 53%;
+    --glass-bg: 0 0% 100% / 0.05;
+    --glass-border: 0 0% 100% / 0.1;
+    --glass-shadow: 0 0% 0% / 0.3;
+    --section-alt: 222 25% 10%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    transition: background-color 0.3s ease, color 0.15s ease, border-color 0.3s ease;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-xl border border-border/50 shadow-lg;
+  }
+  .glass-card-dark {
+    background: hsla(var(--glass-bg));
+    backdrop-filter: blur(16px);
+    border: 1px solid hsla(var(--glass-border));
+    box-shadow: 0 8px 32px hsla(var(--glass-shadow));
+  }
+  .section-padding {
+    @apply py-20 md:py-28 px-4;
+  }
+  .section-alt {
+    background-color: hsl(var(--section-alt));
+  }
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
+  }
+  .hero-gradient {
+    background: linear-gradient(135deg, hsl(var(--hero-gradient-1)), hsl(var(--hero-gradient-2)), hsl(var(--hero-gradient-3)));
+    background-size: 300% 300%;
+    animation: gradient-shift 8s ease infinite;
+  }
+  @keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+  .gradient-border-spin {
+    position: relative;
+    border-radius: 50%;
+    padding: 4px;
+  }
+  .gradient-border-spin::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: conic-gradient(from 0deg, hsl(var(--primary)), hsl(var(--accent)), hsl(216 80% 60%), hsl(var(--primary)));
+    animation: spin-border 4s linear infinite;
+  }
+  @keyframes spin-border {
+    to { transform: rotate(360deg); }
+  }
+  .gradient-border-spin > * {
+    position: relative;
+    z-index: 1;
+  }
+  .skill-bar {
+    @apply h-2 rounded-full bg-muted overflow-hidden;
+  }
+  .skill-bar-fill {
+    @apply h-full rounded-full bg-gradient-to-r from-primary to-accent;
+  }
+  .btn-glow {
+    @apply relative overflow-hidden;
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
+  }
+  .btn-glow:hover {
+    box-shadow: 0 0 20px hsl(var(--accent) / 0.5), 0 0 40px hsl(var(--accent) / 0.2);
+    transform: translateY(-1px);
+  }
+  .btn-glow-outline:hover {
+    box-shadow: 0 0 15px hsl(var(--primary-foreground) / 0.15);
+    transform: translateY(-1px);
+  }
+
+  /* Particles */
+  .particle {
+    position: absolute;
+    border-radius: 50%;
+    background: hsl(var(--accent) / 0.3);
+    animation: particle-float linear infinite;
+    pointer-events: none;
+  }
+  @keyframes particle-float {
+    0% { transform: translateY(0) translateX(0) scale(1); opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { transform: translateY(-100vh) translateX(50px) scale(0.5); opacity: 0; }
+  }
+}
